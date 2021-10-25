@@ -106,10 +106,12 @@ html,body{
 
 .hint-icon{
     position: absolute;
-    top: 12px;
+    top: 5px;
     left: 8px;
-    color: brown;
+    font-size: 18px;
+    font-weight: 700;
 }
+
 .hint-msg{
     line-height: 38px;
     white-space: nowrap; 

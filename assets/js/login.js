@@ -101,26 +101,24 @@ $(function () {
     // alertCorrect(msg)
     // 注册成功弹出提示框
     function alertCorrect(msg) {
-        $('.hint-icon').addClass('glyphicon-ok')
         $('.hint').show().find('.hint-msg').html(msg)
+        $('.hint-icon').css("color","rgb(128, 255, 0)").html('&#xe638;')
         setTimeout(function () {
             $('.hint').fadeOut()
-            $('.hint-icon').removeClass('glyphicon-ok')
+            $('.hint-icon').html("")
         }, 2000)
     }
 
     // 表单验证错误弹出警示框
     function alertError(msg) {
-        $('.hint-icon').addClass('glyphicon-remove')
-
         $('.hint').show().find('.hint-msg').html(msg)
-
+        $('.hint-icon').css("color","rgb(255, 90, 90)").html('&#xe60f;')
         // 抖动提示框
         $('.hint').shake(3, 5, 300)
         // 两秒后隐藏提示框
         setTimeout(function () {
             $('.hint').fadeOut()
-            $('.hint-icon').removeClass('glyphicon-remove')
+            $('.hint-icon').html('')
         }, 2000)
     }
     // 抖动函数  $("抖动元素").shake(次数, 距离, 持续时间);

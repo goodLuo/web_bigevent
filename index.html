@@ -5,11 +5,62 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大事件-主页</title>
+    <title>后台主页</title>
+    <!-- 导入jQuery.js库 -->
+    <script src="./assets/lib/jquery.js"></script>
+
+    <!-- 在线引入入bootstrap -->
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="./assets/js/baseAPI.js"></script>
+    <!-- 自己写的后台主页JS文件 -->
+    <script src="./assets/index.js"></script>
+
+    <!-- 自己写的后台主页样式 -->
+    <link rel="stylesheet" href="./assets/css/fonts.css">
+    <link rel="stylesheet" href="./assets/css/index.css" />
 </head>
 
 <body>
+    <div class="eventContent">
+        <!-- 头部区域 -->
+        <div class="event-header">
+            <div class="header-l">
+                <img src="./assets/images/logo.png" alt="">
+            </div>
+            <div class="header-r">
+                <ul>
+                    <li>
+                        <a href="javascript:;">
+                            <img src="./assets/images/sample.jpg" class="photo" alt="">
+                            个人中心
 
+                            <!-- 箭头图标 arrow-icon-->
+                            <span class="arrow-icon"></span>
+                        </a>
+                        <dl>
+                            <dd><a href="javascript:;">基本资料</a></dd>
+                            <dd><a href="javascript:;">更换头像</a></dd>
+                            <dd><a href="javascript:;">重置密码</a></dd>
+                        </dl>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <span class="exit-icon iconfont">&#xe819;</span>
+                            退出
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 侧边栏区域 -->
+        <div class="event-side"></div>
+        <!-- 中间主体区域 -->
+        <div class="event-main"></div>
+        <!-- 底部区域区域 -->
+        <div class="event-footer"></div>
+    </div>
 </body>
 
 </html>
