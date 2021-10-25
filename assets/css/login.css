@@ -1,0 +1,116 @@
+a:focus, a:hover {
+    text-decoration: none;
+}
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../images/login_bg.jpg') no-repeat center;
+    background-size: cover;
+}
+
+/* 版心 */
+.w{
+    width: 1140px;
+    margin: 0 auto;
+}
+
+/* 头部logo区域样式 */
+.logo{
+    margin-top: 20px;
+}
+
+/* 登录注册区域 */
+.loginAndRegBox{
+    width: 400px;
+    height: 310px;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 0px 8px rgb(53, 102, 251);
+}
+.login-title{
+    width: 100%;
+    height: 60px;
+    background: url('../images/login_title.png') no-repeat center;
+}
+
+/* 默认情况下注册部分隐藏 */
+.regBox{
+    display: none;
+}
+
+/* 登录、注册表单样式 */
+.loginInput,.regInput{
+    padding: 0 30px;
+}
+.input-box{
+    position: relative;
+}
+.login-icon{
+    position: absolute;
+    left: 8px;
+    top: 10px;
+    color: rgb(138, 138, 138);
+}
+
+.loginBtn,.regBtn{
+    background-color: #1E9FFF;
+    border: 0;
+    font-size: 14px;
+    border-radius: 3px;
+    text-indent: 0px !important;
+}
+.loginBtn:hover,.regBtn:hover{
+    opacity: .8 !important;
+    background-color: #1E9FFF;
+}
+.loginBtn:focus,.regBtn:focus{
+    outline: none !important;
+    background-color: #1E9FFF !important;
+    border: 0;
+}
+.goReg{
+    float: right;
+    font-size: 12px;
+}
+
+.login-com{
+    border-radius: 0;
+    text-indent: 15px;
+}
+
+.goLogin{
+    float: right;
+    font-size: 12px;
+}
+
+/* 表单提示框 */
+.hint{
+    display: none;
+    height: 38px;
+    border: 1px solid #ccc;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    padding-left: 30px;
+    padding-right: 10px;
+    box-shadow: 0 0 3px #fff;
+    border-radius: 3px;
+}
+
+.hint-icon{
+    position: absolute;
+    top: 12px;
+    left: 8px;
+    color: brown;
+}
+.hint-msg{
+    line-height: 38px;
+    white-space: nowrap; 
+}
