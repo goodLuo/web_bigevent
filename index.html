@@ -7,15 +7,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>后台主页</title>
     <!-- 导入jQuery.js库 -->
-    <script src="./assets/lib/jquery.js"></script>
-
+    
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
     <!-- 在线引入入bootstrap -->
-    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 
+    <!-- 发起ajax预处理js文件 -->
     <script src="./assets/js/baseAPI.js"></script>
     <!-- 自己写的后台主页JS文件 -->
-    <script src="./assets/index.js"></script>
+    <script src="./assets/js/index.js"></script>
 
     <!-- 自己写的后台主页样式 -->
     <link rel="stylesheet" href="./assets/css/fonts.css">
@@ -26,40 +27,114 @@
     <div class="eventContent">
         <!-- 头部区域 -->
         <div class="event-header">
-            <div class="header-l">
-                <img src="./assets/images/logo.png" alt="">
-            </div>
-            <div class="header-r">
-                <ul>
-                    <li>
-                        <a href="javascript:;">
-                            <img src="./assets/images/sample.jpg" class="photo" alt="">
-                            个人中心
+            <div class="header">
+                <div class="header-l">
+                    <img src="./assets/images/logo.png" alt="">
+                </div>
+                <div class="header-r">
+                    <ul>
+                        <li class="personal">
+                            <a href="javascript:;">
+                                <img src="./assets/images/sample.jpg" class="photo" alt="">
+                                <i class="text-photo">A</i>
+                                <span class="Uname">个人中心</span>
+                                <!-- 箭头图标 arrow-icon-->
+                                <span class="arrow-icon-com user-icon iconfont"></span>
+                            </a>
+                            <!-- 个人中心下拉列表 -->
+                            <dl class="quick">
+                                <dd><a href="javascript:;">基本资料</a></dd>
+                                <dd><a href="javascript:;">更换头像</a></dd>
+                                <dd><a href="javascript:;">重置密码</a></dd>
+                            </dl>
+                        </li>
+                        <li class="exitLogin" data-toggle="modal" data-target="#myModal">
+                            <a href="javascript:;">
+                                <span class="exit-icon iconfont"> </span>
+                                退出
+                            </a>
+                        </li>
+                    </ul>
+                    
+                    <!-- 退出提示模态框（Modal） -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class=    "close" data-dismiss="modal"
+                                        aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">提示</h4>
+                                </div>
 
-                            <!-- 箭头图标 arrow-icon-->
-                            <span class="arrow-icon"></span>
-                        </a>
-                        <dl>
-                            <dd><a href="javascript:;">基本资料</a></dd>
-                            <dd><a href="javascript:;">更换头像</a></dd>
-                            <dd><a href="javascript:;">重置密码</a></dd>
-                        </dl>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            <span class="exit-icon iconfont">&#xe819;</span>
-                            退出
-                        </a>
-                    </li>
-                </ul>
+                                <div class="modal-body iconfont">确定要退出吗?</div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary exitBut">确定</button>
+                                    <button type="button" class="btn btn-default cancelBut" data-dismiss="modal">取消</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
             </div>
         </div>
         <!-- 侧边栏区域 -->
-        <div class="event-side"></div>
+        <div class="event-side">
+            <!-- 用户信息区域 -->
+            <div class="user-info">
+                <img src="./assets/images/sample.jpg" class="photo" alt="">
+                <i class="text-photo">A</i>
+                <span class="welcome">欢迎item1</span>
+            </div>
+            <!-- 功能导航列表 -->
+            <ul class="side-nav">
+                <li>
+                    <a href="./home/dashboard.html" target="fm-main" class="side-title cArea current">
+                        <span class="side-icon iconfont index-icon"></span>
+                        首页
+                    </a>
+                </li>
+                <li class="funNav">
+                    <!-- 一级标题 -->
+                    <a href="javascript:;" class="side-title">
+                        <span class="side-icon iconfont artice-icon"></span>
+                        文章管理
+                        <span class="arrow-icon-com iconfont size-arrow-icon"></span>
+                    </a>
+                    <!-- 二级标题 -->
+                    <dl class="side-arial">
+                        <dd class="iconfont cArea"><a href="javascript:;">文章类别</a></dd>
+                        <dd class="iconfont cArea"><a href="javascript:;">文章列表</a></dd>
+                        <dd class="iconfont cArea"><a href="javascript:;">发表文章</a></dd>
+                    </dl>
+                </li>
+                <li class="funNav">
+                    <!-- 一级标题 -->
+                    <a href="javascript:;" class="side-title">
+                        <span class="side-icon iconfont u-icon"></span>
+                        个人中心
+                        <span class="arrow-icon-com iconfont size-arrow-icon"></span>
+                    </a>
+                    <!-- 二级标题 -->
+                    <dl class="side-arial">
+                        <dd class="iconfont cArea"><a href="javascript:;">基本资料</a></dd>
+                        <dd class="iconfont cArea"><a href="javascript:;">更换头像</a></dd>
+                        <dd class="iconfont cArea"><a href="javascript:;">重置密码</a></dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
         <!-- 中间主体区域 -->
-        <div class="event-main"></div>
+        <div class="event-main">
+            <iframe name="fm-main" src="./home/dashboard.html" frameborder="0" id="frame"></iframe>
+        </div>
         <!-- 底部区域区域 -->
-        <div class="event-footer"></div>
+        <div class="event-footer">
+            <div class="quarry">www.cnm.com--今天也是美好的一天</div>
+        </div>
     </div>
 </body>
 
