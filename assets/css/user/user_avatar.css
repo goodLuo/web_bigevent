@@ -1,0 +1,112 @@
+button:focus {
+    outline: none !important;
+    border: 0 !important;
+}
+
+
+body {
+    margin: 0;
+    padding: 15px 15px 0 15px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(243, 243, 243);
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.title {
+    width: 100%;
+    height: 43px;
+    line-height: 43px;
+    padding-left: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+
+/* 主体区域 */
+.main {
+    width: 530px;
+    padding: 15px;
+}
+
+/* 第一行--裁剪区域以及预览区域 */
+.row1 {
+    display: flex;
+    width: 100%;
+}
+
+.container {
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* 预览盒子 */
+.preview-box {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* 设置第一个预览区域的样式 */
+.w100 {
+    overflow: hidden;
+    width: 100px;
+    height: 100px !important;
+    background-color: gray;
+    border-radius: 50%;
+}
+
+/* 设置第二个预览区域的样式 */
+.w50 {
+    overflow: hidden;
+    width: 50px;
+    height: 50px !important;
+    background-color: gray;
+    margin-top: 50px;
+    border-radius: 50%; 
+}
+
+/* 设置预览区域下方文本的样式 */
+.size {
+    font-size: 12px;
+    color: gray;
+    text-align: center;
+}
+
+/* 第二行--按钮 */
+.row2 {
+    padding: 30px 15px 15px 15px;
+}
+.btn-info{
+    margin-right: 10px;
+}
+
+
+
+.hint{
+    display: none;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform:translate(-50%,-45%);
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    line-height: 50px;
+    text-align: center;
+}
+
+.hint-icon {
+    margin-right: 5px;
+    font-size: 18px;
+}
