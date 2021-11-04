@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 导入jQuery.js库 -->
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <!-- jQuery分页插件 -->
+    <script src="../assets/lib/Page/jqpaginator.min.js"></script>
+
+    <!-- 在线引入入bootstrap -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- 发起ajax预处理js文件 -->
+    <script src="../assets/js/baseAPI.js"></script>
+    <script src="../assets/js/Hint_window.js"></script>
+    <script src="../assets/lib/template-web.js"></script>
+    <script src="../assets/js/article_list.js"></script>
+
+    <!-- 自己写的基本信息样式文件 -->
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/article/article_list.css">
+</head>
+
+<body>
+    <div class="con">
+        <!-- 标题区域 -->
+        <div class="title">
+            <div>文章类别管理</div>
+        </div>
+
+        <!-- 筛选区域 -->
+        <form action="" class="filter">
+            <div class="form-item">
+                <label>分类</label>
+                <select name="cate_id" class="cate_id">
+                    <!-- <option value="">请选择分类</option>
+                    <option value="最新">最新</option>
+                    <option value="科技">科技</option> -->
+                </select>
+            </div>
+            <div class="form-item">
+                <label>状态</label>
+                <select name="state" class="state">
+                    <option value="">请选择状态</option>
+                    <option value="已发布">已发布</option>
+                    <option value="草稿">草稿</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success">筛选</button>
+            </div>
+
+        </form>
+
+        <!-- 列表区域 -->
+        <table class="table table-hover table-bordered">
+            <thead>
+                <tr>
+                    <th>文章标题</th>
+                    <th>分类</th>
+                    <th>发表时间</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody class="articleList">
+                <!-- <tr>
+                    <td>春风十里</td>
+                    <td>罪行</td>
+                    <td>2021-11-2 11:39:56</td>
+                    <td>草稿</td>
+                    <td class="operation">
+                        <button type="button" class="btn btn-danger btn-sm">删除</button>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+
+
+        <!-- 分页区域 -->
+        <div class="page-box">
+            <ul class="pagination" id="pagination1"></ul>
+            <!-- <ul>
+                <li class="jump">
+                    跳转至
+                    <input type="num" value="1">
+                    页
+                    <button type="button" class="btn btn-default btn-sm">确定</button>
+                </li>
+            </ul> -->
+        </div>
+
+    </div>
+
+    <!-- 提示框 -->
+    <div class="hint">
+        <span class="iconfont hint-icon"></span>
+        <span class="hint-msg"></span>
+    </div>
+
+    <!-- 删除文章模态框 -->
+    <div class="modal fade" id="rmArticle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">提示</h4>
+                </div>
+
+                <div class="modal-body iconfont">确定要删除吗?</div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary rmBut">确定</button>
+                    <button type="button" class="btn btn-default cancelBut" data-dismiss="modal">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- 文章类别模版 -->
+    <script type="text/html" id="tpl-articleClassify">
+        <option value="">请选择分类</option>
+        {{each data}}
+        <option value={{$value.Id}}>{{$value.name}}</option>
+        {{/each}}
+    </script>
+
+    <!-- 文章列表模板 -->
+    <script type="text/html" id="tpl-articleList">
+        {{each data}}
+        <tr>
+            <td>{{$value.title}}</td>
+            <td>{{$value.cate_name}}</td>
+            <td>{{$value.pub_date|dataFormat}}</td>
+            <td>{{$value.state}}</td>
+            <td class="operation">
+                <button type="button" data-id={{$value.Id}} class="btn btn-danger btn-sm rm-btn" data-toggle="modal" data-target="#rmArticle">删除</button>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+
+</body>
+
+</html>

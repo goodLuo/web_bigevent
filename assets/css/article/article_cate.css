@@ -1,0 +1,150 @@
+html,
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    padding: 10px 10px 0 10px;
+    background-color: rgb(243, 243, 243);
+    color: #666;
+    font-size: 16px;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+.con {
+    width: 100%;
+    /* height: 60%; */
+    padding: 0 20px 20px;
+    background-color: #fff;
+    /* overflow: hidden; */
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 43px;
+    /* padding: 0 15px; */
+    border-bottom: 1px solid #eee;
+}
+
+table {
+    margin-top: 15px;
+    margin-bottom: 0 !important;
+}
+
+thead {
+    background-color: #f5f5f5;
+}
+
+.table-hover>tbody>tr {
+    height: 41px !important;
+    transition: all .5s;
+}
+
+th,
+td {
+    padding: 8px 15px !important;
+    vertical-align:middle !important;
+    font-weight: 400;
+}
+
+.operation button {
+    color: #fff;
+    font-size: 14px;
+    padding: 5px;
+    background-color: green;
+    border-radius: 3px;
+    border: 0;
+}
+
+.operation button:nth-of-type(1) {
+    background-color: #009688;
+    margin-right: 7px;
+}
+
+.operation button:nth-of-type(2) {
+    background-color: #FF5722;
+}
+
+/* 模态框 */
+
+.Moheader {
+    background-color: #f8f8f8;
+    cursor: move;
+}
+
+.Mocontent {
+    margin: 0 !important;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) !important;
+    overflow: visible !important;
+    /*margin: 0 !important; */
+}
+
+
+.col-sm-2 {
+    width: 20%;
+}
+
+.col-sm-10 {
+    width: 80%;
+    padding-left: 0px;
+} 
+/* .modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    outline: 0;
+} */
+
+
+/* 提示框 */
+.hint {
+    display: none;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    line-height: 50px;
+    text-align: center;
+    z-index: 2000;
+}
+
+.hint-icon {
+    margin-right: 5px;
+    font-size: 18px;
+}
+
+.rmModal{
+    width: 300px;
+    margin: 235px auto;
+}
+.remove-icon {
+    position: relative !important;
+    padding-left: 40px !important;
+}
+
+.remove-icon::after {
+    content: '\e64e';
+    position: absolute !important;
+    top: 8px !important;
+    left: 8px !important;
+    font-size: 24px !important;
+    color: orange !important;
+}
